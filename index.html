@@ -5,327 +5,78 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Happy Birthday Kritika 🎉</title>
 
-<!-- Google Font (safe to keep; fallback provided) -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+<!-- Google Font (online) -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
-  :root{
-    --bg1:#0f1724;
-    --bg2:#4f46e5;
-    --accent:#ff6b81;
-    --card:#0b1220cc;
-    --glass: rgba(255,255,255,0.06);
-  }
-  /* Reset & layout */
-  *{box-sizing:border-box}
-  html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
-  body{
-    background: radial-gradient(1200px 600px at 10% 20%, rgba(79,70,229,0.18), transparent),
-                radial-gradient(900px 500px at 90% 80%, rgba(255,107,129,0.12), transparent),
-                linear-gradient(180deg,var(--bg1), #071026 60%);
-    color:#ffffff;
-    -webkit-font-smoothing:antialiased;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:32px;
-  }
-
-  /* Main card */
-  .card{
-    width: min(1100px, 96vw);
-    max-width:1100px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border-radius:20px;
-    padding:28px;
-    position:relative;
-    overflow:hidden;
-    box-shadow: 0 10px 40px rgba(2,6,23,0.7);
-    display:flex;
-    gap:24px;
-    align-items:stretch;
-  }
-
-  /* Left panel (visuals) */
-  .visual{
-    flex:1.1;
-    min-width:320px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-    padding:20px;
-  }
-
-  /* Right panel (text + message) */
-  .info{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-    justify-content:center;
-    padding:12px 6px;
-  }
-
-  .title{
-    font-size: clamp(28px, 4.2vw, 44px);
-    line-height:1;
-    font-weight:900;
-    letter-spacing:-0.02em;
-    display:flex;
-    gap:12px;
-    align-items:center;
-    text-shadow: 0 6px 30px rgba(79,70,229,0.18);
-  }
-  .title .spark{
-    display:inline-block;
-    transform-origin:center;
-    animation: pop 1.7s infinite;
-  }
-  @keyframes pop{
-    0%,100%{transform:scale(1)}
-    50%{transform:scale(1.08) rotate(4deg)}
-  }
-
-  .subtitle{
-    font-size:14px;
-    opacity:0.86;
-    color: #d8d8ff;
-  }
-
-  /* Message box (editable) */
-  .message{
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
-    border-radius:12px;
-    padding:14px;
-    min-height:120px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.03);
-    overflow:auto;
-  }
-  .message[contenteditable="true"]:focus{
-    outline: 3px solid rgba(79,70,229,0.18);
-    outline-offset:2px;
-  }
-
-  /* Buttons */
-  .controls{
-    display:flex;
-    gap:12px;
-    align-items:center;
-  }
-  .btn{
-    padding:10px 16px;
-    border-radius:10px;
-    border:0;
-    cursor:pointer;
-    font-weight:700;
-    letter-spacing:0.02em;
-    background: linear-gradient(90deg, #6ee7b7, #34d399);
-    color:#042024;
-    box-shadow: 0 8px 30px rgba(50,150,120,0.12);
-  }
-  .btn.ghost{
-    background:transparent;
-    border:1px solid rgba(255,255,255,0.06);
-    color: #dbeafe;
-    box-shadow:none;
-    font-weight:600;
-  }
-
-  /* Small hint */
-  .hint{
-    font-size:13px;
-    color: #cbd5e1;
-    opacity:0.9;
-  }
-
-  /* Floating balloons */
-  .balloon{
-    position:absolute;
-    bottom:-10%;
-    width:110px;
-    height:140px;
-    border-radius:60% 60% 50% 50%;
-    transform-origin:center bottom;
-    animation: floatUp linear infinite;
-    opacity:0.95;
-    display:flex;
-    align-items:flex-end;
-    justify-content:center;
-  }
-  .balloon::after{
-    content:'';
-    width:2px;height:40px;background:rgba(255,255,255,0.12);
-    transform:translateY(12px) rotate(10deg);
-    border-radius:2px;
-    display:block;
-  }
-
-  @keyframes floatUp{
-    0%{transform: translateY(0) rotate(-5deg)}
-    50%{transform: translateY(-30vh) rotate(5deg)}
-    100%{transform: translateY(-62vh) rotate(-5deg)}
-  }
-
-  /* Cake illustration */
-  .cake{
-    width:260px;
-    max-width:45vw;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-  }
-  .cake .plate{
-    position:absolute;
-    bottom:6px;
-    width:220px;
-    height:22px;
-    background:linear-gradient(90deg,#2b3140,#111518);
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(2,6,23,0.6);
-    transform:translateY(12px);
-    opacity:0.95;
-  }
-  .cake-tier{
-    width:220px;
-    background: linear-gradient(180deg,#ffd6e0 0%, #ff9fb1 100%);
-    border-radius:12px;
-    padding:12px;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.25);
-    position:relative;
-  }
-  .cake-top{
-    width:160px;height:46px;background:linear-gradient(180deg,#fff5f7,#ffeef2);border-radius:10px;margin: -36px auto 8px;box-shadow:0 6px 20px rgba(0,0,0,0.16);
-    display:flex;align-items:center;justify-content:center;position:relative;
-  }
-
-  /* Candles */
-  .candle{
-    width:8px;height:28px;border-radius:2px;background:linear-gradient(180deg,#fff,#ffdfdf);
-    position:absolute;bottom:22px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.35);
-  }
-  .candle:nth-child(1){left:42%;}
-  .candle:nth-child(2){left:50%;}
-  .candle:nth-child(3){left:58%;}
-  .flame{
-    position:absolute;top:-12px;left:50%;transform:translateX(-50%);width:12px;height:18px;border-radius:50% 50% 50% 50%;
-    background: radial-gradient(circle at 35% 30%, #fff3a7, #ffaf33 40%, #ff5b5b 70%);
-    filter: drop-shadow(0 4px 8px rgba(255,120,90,0.25));
-    animation: flicker 0.35s linear infinite;
-  }
-  @keyframes flicker{
-    0%{transform:translateX(-50%) scaleY(1)}
-    50%{transform:translateX(-50%) scaleY(1.15) translateY(-1px)}
-    100%{transform:translateX(-50%) scaleY(1)}
-  }
-
-  /* Confetti canvas placed over everything */
-  canvas#confettiCanvas{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-  }
-
-  /* Responsive tweaks */
-  @media (max-width:880px){
-    .card{flex-direction:column;align-items:stretch;padding:18px}
-    .visual{order:1;min-height:320px}
-    .info{order:2}
-    .cake{transform:scale(0.95)}
-  }
-
-  /* small animation flair for the name */
-  .name{
-    background: linear-gradient(90deg,#fff 0%, #ffd6e0 50%, #fff 100%);
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-    font-weight:900;
-    font-size: clamp(28px, 6vw, 58px);
-  }
+:root{--bg1:#0f1724;--accent:#ff6b81;}
+html,body{height:100%;margin:0;font-family:'Poppins',sans-serif;background: radial-gradient(1200px 600px at 10% 20%, rgba(79,70,229,0.18), transparent), radial-gradient(900px 500px at 90% 80%, rgba(255,107,129,0.12), transparent), linear-gradient(180deg,var(--bg1), #071026 60%); color:#fff; display:flex; align-items:center; justify-content:center; padding:32px; overflow:hidden;}
+.card{width:min(1100px,96vw); background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:20px; padding:28px; position:relative; overflow:hidden; box-shadow: 0 10px 40px rgba(2,6,23,0.7); display:flex; gap:24px; align-items:stretch;}
+.visual{flex:1.1; display:flex; align-items:center; justify-content:center; position:relative; padding:20px;}
+.info{flex:1; display:flex; flex-direction:column; gap:18px; justify-content:center; padding:12px 6px;}
+.title{font-size:clamp(28px,4.2vw,44px); line-height:1; font-weight:900; letter-spacing:-0.02em; display:flex; gap:12px; align-items:center; text-shadow: 0 6px 30px rgba(79,70,229,0.18);}
+.title .spark{display:inline-block; transform-origin:center; animation: pop 1.7s infinite;}
+@keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.08) rotate(4deg)}}
+.name{background: linear-gradient(90deg,#fff 0%, #ffd6e0 50%, #fff 100%); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:900; font-size:clamp(28px,6vw,58px);}
+.message{background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015)); border-radius:12px; padding:14px; min-height:120px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.03); overflow:auto;}
+.balloon{position:absolute; bottom:-10%; width:110px; height:140px; border-radius:60% 60% 50% 50%; transform-origin:center bottom; animation: floatUp linear infinite; opacity:0.95; display:flex; align-items:flex-end; justify-content:center;}
+.balloon::after{content:''; width:2px;height:40px; background:rgba(255,255,255,0.12); transform:translateY(12px) rotate(10deg); border-radius:2px; display:block;}
+@keyframes floatUp{0%{transform: translateY(0) rotate(-5deg)}50%{transform: translateY(-30vh) rotate(5deg)}100%{transform: translateY(-62vh) rotate(-5deg)}}
+.cake{width:260px; max-width:45vw; display:flex; align-items:center; justify-content:center; position:relative;}
+.cake .plate{position:absolute; bottom:6px; width:220px; height:22px; background:linear-gradient(90deg,#2b3140,#111518); border-radius:20px; box-shadow:0 10px 30px rgba(2,6,23,0.6); transform:translateY(12px); opacity:0.95;}
+.cake-tier{width:220px; background: linear-gradient(180deg,#ffd6e0 0%, #ff9fb1 100%); border-radius:12px; padding:12px; box-shadow: 0 6px 24px rgba(0,0,0,0.25); position:relative;}
+.cake-top{width:160px;height:46px;background:linear-gradient(180deg,#fff5f7,#ffeef2);border-radius:10px;margin: -36px auto 8px;box-shadow:0 6px 20px rgba(0,0,0,0.16);display:flex;align-items:center;justify-content:center;position:relative;}
+.candle{width:8px;height:28px;border-radius:2px;background:linear-gradient(180deg,#fff,#ffdfdf);position:absolute;bottom:22px;box-shadow:0 2px 6px rgba(0,0,0,0.35);}
+.candle:nth-child(1){left:42%;}.candle:nth-child(2){left:50%;}.candle:nth-child(3){left:58%;}
+.flame{position:absolute;top:-12px;left:50%;transform:translateX(-50%);width:12px;height:18px;border-radius:50%;background: radial-gradient(circle at 35% 30%, #fff3a7, #ffaf33 40%, #ff5b5b 70%);filter: drop-shadow(0 4px 8px rgba(255,120,90,0.25)); animation: flicker 0.35s linear infinite;}
+@keyframes flicker{0%{transform:translateX(-50%) scaleY(1)}50%{transform:translateX(-50%) scaleY(1.15) translateY(-1px)}100%{transform:translateX(-50%) scaleY(1)}}
+canvas#confettiCanvas{position:absolute; inset:0; pointer-events:none;}
 </style>
 </head>
 <body>
-  <div class="card" role="region" aria-label="Birthday card for Kritika">
-    <canvas id="confettiCanvas"></canvas>
+<div class="card">
+  <canvas id="confettiCanvas"></canvas>
 
-    <div class="visual" aria-hidden="false">
-      <!-- Animated floating balloons -->
-      <div class="balloon" style="left:6%; animation-duration:14s; background: radial-gradient(circle at 30% 20%, #fff2f6, #ff6b81)">
-      </div>
-      <div class="balloon" style="left:22%; animation-duration:12s; width:90px;height:120px;background: radial-gradient(circle at 30% 20%, #ffffff,#ffa8d0);">
-      </div>
-      <div class="balloon" style="left:38%; animation-duration:16s; width:120px;height:150px;background: radial-gradient(circle at 35% 20%, #ffffff,#6ee7b7);">
-      </div>
-      <div class="balloon" style="left:72%; animation-duration:11s; width:100px;height:130px;background: radial-gradient(circle at 30% 20%, #fff,#7dd3fc);">
-      </div>
+  <div class="visual">
+    <div class="balloon" style="left:6%; animation-duration:14s; background: radial-gradient(circle at 30% 20%, #fff2f6, #ff6b81)"></div>
+    <div class="balloon" style="left:22%; animation-duration:12s; width:90px;height:120px;background: radial-gradient(circle at 30% 20%, #ffffff,#ffa8d0);"></div>
+    <div class="balloon" style="left:38%; animation-duration:16s; width:120px;height:150px;background: radial-gradient(circle at 35% 20%, #ffffff,#6ee7b7);"></div>
+    <div class="balloon" style="left:72%; animation-duration:11s; width:100px;height:130px;background: radial-gradient(circle at 30% 20%, #fff,#7dd3fc);"></div>
 
-      <!-- Cake illustration -->
-      <div class="cake" role="img" aria-label="Birthday cake with candles">
-        <div class="plate" aria-hidden="true"></div>
-        <div style="text-align:center;">
-          <div class="cake-top" aria-hidden="true">
-            <div style="position:relative;width:100%;height:100%;">
-              <div class="candle" style="left:40%"><div class="flame"></div></div>
-              <div class="candle" style="left:50%"><div class="flame"></div></div>
-              <div class="candle" style="left:60%"><div class="flame"></div></div>
-            </div>
-          </div>
-          <div class="cake-tier" aria-hidden="true">
-            <div style="font-size:14px;font-weight:700;color:#581e39;text-align:center;">Make a wish!</div>
+    <div class="cake">
+      <div class="plate"></div>
+      <div style="text-align:center;">
+        <div class="cake-top">
+          <div style="position:relative;width:100%;height:100%;">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
           </div>
         </div>
+        <div class="cake-tier">Make a wish!</div>
       </div>
-
-      <!-- subtle decorative hearts -->
-      <svg style="position:absolute; right:8px; top:18px; width:90px; opacity:0.9" viewBox="0 0 24 24">
-        <path fill="#ff9fb1" d="M12 21s-6.5-4.35-9-7.07C-1.86 9.06 4.5 3 8.5 5.5 10.2 6.7 12 8.5 12 8.5s1.8-1.8 3.5-3C19.5 3 24.36 9.06 21 13.93 18.5 16.65 12 21 12 21z"/>
-      </svg>
-    </div>
-
-    <div class="info">
-      <div>
-        <div class="title" aria-hidden="false">
-          <span class="spark">🎉</span>
-          <span>Happy Birthday</span>
-        </div>
-        <!-- === EDIT THE NAME HERE === -->
-        <div class="name" id="birthdayName" aria-live="polite">Kritika</div>
-        <!-- ========================= -->
-        <div class="subtitle">A bright, bubbly celebration just for your gurl. Add a personalized note below.</div>
-      </div>
-
-      <!-- User will add custom message HERE. It's contenteditable. -->
-      <div>
-        <label for="message" class="hint" style="display:block">Your custom message (click to edit):</label>
-        <!-- === PASTE/EDIT YOUR CUSTOM MESSAGE INSIDE THE DIV BELOW === -->
-        <div id="message" class="message" contenteditable="true" role="textbox" aria-multiline="true" spellcheck="true">
-<strong>Hey Kritika —</strong><br>
-Wishing you the happiest birthday! May your day sparkle as brightly as you do. <em>— Lots of love</em>
-        </div>
-        <!-- ======================================================== -->
-      </div>
-
-      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:6px;">
-        <div class="controls">
-          <button class="btn" id="celebrateBtn" title="Celebrate (confetti)">Celebrate!</button>
-          <button class="btn ghost" id="downloadBtn" title="Download as image">Download PNG</button>
-        </div>
-        <div style="text-align:right">
-          <div class="hint">Tip: Click the message above to replace it with your personal note.</div>
-        </div>
-      </div>
-
     </div>
   </div>
 
+  <div class="info">
+    <div>
+      <div class="title"><span class="spark">🎉</span> Happy Birthday</div>
+      <div class="name" id="birthdayName">Kritika</div>
+    </div>
+
+    <div>
+      <div id="message" class="message" contenteditable="true">
+        Wishing you the happiest birthday, Kritika! May your day sparkle as brightly as you do.
+      </div>
+    </div>
+
+    <div style="margin-top:6px;">
+      <button class="btn" id="celebrateBtn">Celebrate!</button>
+    </div>
+  </div>
+</div>
+
 <script>
-/* --------------------------
-   Confetti / celebration code
-   -------------------------- */
 (function(){
   const canvas = document.getElementById('confettiCanvas');
   const ctx = canvas.getContext('2d');
@@ -333,15 +84,7 @@ Wishing you the happiest birthday! May your day sparkle as brightly as you do. <
   let H = canvas.height = window.innerHeight;
   let confetti = [];
   const colors = ['#ff6b81','#ff9fb1','#ffd6e0','#7dd3fc','#6ee7b7','#ffdf7d','#d6b3ff'];
-
-  function resetCanvas(){
-    W = canvas.width = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
-  window.addEventListener('resize', resetCanvas);
-
   function random(min,max){ return Math.random()*(max-min)+min; }
-
   function Confetto(x,y){
     this.x = x || random(0,W);
     this.y = y || random(-50, -10);
@@ -368,131 +111,19 @@ Wishing you the happiest birthday! May your day sparkle as brightly as you do. <
     ctx.translate(this.x, this.y);
     ctx.rotate(this.rotation * Math.PI/180);
     ctx.globalCompositeOperation = 'lighter';
-    if(this.shape==='rect'){
-      ctx.fillStyle = this.color;
-      ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size*0.6);
-    } else {
-      ctx.beginPath();
-      ctx.fillStyle = this.color;
-      ctx.arc(0,0,this.size/2,0,Math.PI*2);
-      ctx.fill();
-    }
+    if(this.shape==='rect'){ ctx.fillStyle = this.color; ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size*0.6); }
+    else{ ctx.beginPath(); ctx.fillStyle = this.color; ctx.arc(0,0,this.size/2,0,Math.PI*2); ctx.fill(); }
     ctx.restore();
   };
-
-  function spawnBurst(x,y,count){
-    for(let i=0;i<count;i++){
-      confetti.push(new Confetto(x + random(-30,30), y + random(-10,10)));
-    }
-  }
-
-  function updateAll(){
-    ctx.clearRect(0,0,W,H);
-    for(let i=confetti.length-1;i>=0;i--){
-      const c = confetti[i];
-      c.update();
-      c.draw(ctx);
-      if(c.y > H + 60 || c.life > c.maxLife) confetti.splice(i,1);
-    }
-    requestAnimationFrame(updateAll);
-  }
+  function spawnBurst(x,y,count){ for(let i=0;i<count;i++){ confetti.push(new Confetto(x + random(-30,30), y + random(-10,10))); } }
+  function updateAll(){ ctx.clearRect(0,0,W,H); for(let i=confetti.length-1;i>=0;i--){ const c=confetti[i]; c.update(); c.draw(ctx); if(c.y>H+60||c.life>c.maxLife) confetti.splice(i,1);} requestAnimationFrame(updateAll);}
   updateAll();
-
-  // Wire to button
   const celebrateBtn = document.getElementById('celebrateBtn');
-  celebrateBtn.addEventListener('click', (e)=>{
+  celebrateBtn.addEventListener('click', ()=>{
     const rect = celebrateBtn.getBoundingClientRect();
     spawnBurst(rect.left + rect.width/2, rect.top + rect.height/2, 80);
-    // small extra bursts near cake
-    const cake = document.querySelector('.cake').getBoundingClientRect();
-    spawnBurst(cake.left + cake.width/2, cake.top + cake.height/2, 120);
   });
-
-  // Auto gentle ambient confetti occasionally
-  setInterval(()=> {
-    spawnBurst(random(0,W), random(0, H*0.2), Math.floor(random(8,18)));
-  }, 3000);
-
-  // Download current card as PNG
-  document.getElementById('downloadBtn').addEventListener('click', async ()=>{
-    // We'll render the card area to a canvas using HTML2Canvas-like approach
-    // but instead of a heavy library we're going to temporarily scale and draw.
-    // Simpler approach: use CSS to create a snapshot via SVG foreignObject and canvas.
-    try {
-      const card = document.querySelector('.card');
-      const rect = card.getBoundingClientRect();
-      // create SVG that embeds the HTML via foreignObject
-      const clone = card.cloneNode(true);
-      // remove canvas from clone to avoid animation overlay
-      const canv = clone.querySelector('#confettiCanvas');
-      if(canv) canv.remove();
-      // inline stylesheet
-      const css = [...document.querySelectorAll('style, link[rel="stylesheet"]')]
-        .map(s => s.outerHTML).join('\n');
-
-      // sanitize and compute
-      const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='${rect.width}' height='${rect.height}'>
-        <foreignObject width='100%' height='100%'>
-          <div xmlns='http://www.w3.org/1999/xhtml'>
-            ${css}
-            ${clone.outerHTML}
-          </div>
-        </foreignObject>
-      </svg>`;
-
-      const svgBlob = new Blob([svg], {type: 'image/svg+xml;charset=utf-8'});
-      const url = URL.createObjectURL(svgBlob);
-      const img = new Image();
-      img.onload = () => {
-        const c = document.createElement('canvas');
-        c.width = rect.width * 2; // higher res
-        c.height = rect.height * 2;
-        const cctx = c.getContext('2d');
-        cctx.fillStyle = getComputedStyle(document.body).backgroundColor || '#071026';
-        cctx.fillRect(0,0,c.width,c.height);
-        cctx.drawImage(img, 0, 0, c.width, c.height);
-        URL.revokeObjectURL(url);
-        c.toBlob((blob)=>{
-          const a = document.createElement('a');
-          a.href = URL.createObjectURL(blob);
-          a.download = 'happy-birthday-kritika.png';
-          a.click();
-        }, 'image/png');
-      };
-      img.src = url;
-    } catch(err){
-      alert('Download failed in this browser. You can still screenshot the page.');
-      console.error(err);
-    }
-  });
-
-  // Accessibility: let Enter on message trigger celebration
-  document.getElementById('message').addEventListener('keydown', (ev)=>{
-    if(ev.key === "Enter" && (ev.ctrlKey || ev.metaKey)){
-      ev.preventDefault();
-      celebrateBtn.click();
-    }
-  });
-
-  // Small decorative sparkle on the title every few seconds
-  setInterval(()=>{
-    const spark = document.querySelector('.spark');
-    spark.animate([{transform:'scale(1) rotate(0deg)'},{transform:'scale(1.18) rotate(8deg)'},{transform:'scale(1) rotate(0deg)'}], {
-      duration:900, easing:'ease-in-out'
-    });
-  }, 2400);
-
-  // Helpful: Let user change the name by clicking the name text
-  const nameEl = document.getElementById('birthdayName');
-  nameEl.style.cursor = 'pointer';
-  nameEl.title = "Click to edit name";
-  nameEl.addEventListener('click', ()=>{
-    const newName = prompt('Edit birthday name:', nameEl.textContent.trim() || 'Kritika');
-    if(newName !== null && newName.trim() !== ''){
-      nameEl.textContent = newName.trim();
-    }
-  });
-
+  window.addEventListener('resize', ()=>{ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; });
 })();
 </script>
 </body>
