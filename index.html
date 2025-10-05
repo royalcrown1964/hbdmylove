@@ -13,64 +13,36 @@ body, html {
               radial-gradient(900px 500px at 90% 80%, rgba(255,107,129,0.12), transparent),
               linear-gradient(180deg,#0f1724, #071026 60%);
   color:#fff; overflow:hidden;
-  display:flex; align-items:center; justify-content:center;
+  display:flex; justify-content:center; align-items:center;
 }
 .card {
-  position:relative; width:min(600px,95vw); 
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015)); 
-  border-radius:20px; padding:32px; 
-  display:flex; flex-direction:column; align-items:center; gap:24px;
+  position:relative; width:min(600px,90vw); padding:32px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
+  border-radius:20px; display:flex; flex-direction:column; align-items:center; gap:24px;
   box-shadow:0 10px 40px rgba(2,6,23,0.7);
-}
-.title {
-  font-size:clamp(28px,4vw,44px); font-weight:900; display:flex; align-items:center; gap:12px;
-  text-shadow:0 6px 30px rgba(79,70,229,0.18);
-}
-.title .spark {display:inline-block; animation:pop 1.7s infinite;}
-@keyframes pop {0%,100%{transform:scale(1)}50%{transform:scale(1.08) rotate(4deg)}}
-.name {
-  font-size:clamp(28px,6vw,58px); font-weight:900; 
-  background: linear-gradient(90deg,#fff 0%, #ffd6e0 50%, #fff 100%);
-  -webkit-background-clip:text; background-clip:text; color:transparent;
   text-align:center;
 }
-.message {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015)); 
-  border-radius:12px; padding:16px; min-height:120px; 
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02); 
-  border:1px solid rgba(255,255,255,0.03); 
-  font-size:18px; text-align:center;
-}
-.cake {
-  position:relative; width:260px; display:flex; flex-direction:column; align-items:center; margin-top:16px;
-}
-.cake .plate {
-  position:absolute; bottom:6px; width:220px; height:22px; 
-  background:linear-gradient(90deg,#2b3140,#111518); border-radius:20px; 
-  box-shadow:0 10px 30px rgba(2,6,23,0.6);
-}
-.cake-tier {
-  width:220px; background:linear-gradient(180deg,#ffd6e0,#ff9fb1); border-radius:12px; 
-  padding:12px; text-align:center; font-weight:700; color:#581e39;
-}
-.cake-top {
-  width:160px; height:46px; background:linear-gradient(180deg,#fff5f7,#ffeef2); 
-  border-radius:10px; margin:-36px auto 8px; position:relative; display:flex; justify-content:center; align-items:center;
-}
-.candle {width:8px;height:28px;border-radius:2px;background:linear-gradient(180deg,#fff,#ffdfdf);position:absolute;bottom:22px;box-shadow:0 2px 6px rgba(0,0,0,0.35);}
+.title {font-size:clamp(28px,5vw,44px); font-weight:900; text-shadow:0 6px 30px rgba(79,70,229,0.18);}
+.name {font-size:clamp(28px,6vw,58px); font-weight:900; background:linear-gradient(90deg,#fff 0%,#ffd6e0 50%,#fff 100%); -webkit-background-clip:text; background-clip:text; color:transparent;}
+.message {background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015)); border-radius:12px; padding:16px; font-size:18px; color:#fff;}
+.cake {position:relative; width:200px; display:flex; flex-direction:column; align-items:center; margin-top:16px;}
+.cake .plate {position:absolute; bottom:6px; width:160px; height:12px; background:linear-gradient(90deg,#2b3140,#111518); border-radius:20px; box-shadow:0 10px 30px rgba(2,6,23,0.6);}
+.cake-tier {width:160px; background:linear-gradient(180deg,#ffd6e0,#ff9fb1); border-radius:12px; padding:12px;}
+.cake-top {width:120px; height:36px; background:linear-gradient(180deg,#fff5f7,#ffeef2); border-radius:10px; margin:-28px auto 8px; display:flex; justify-content:center; align-items:center; position:relative;}
+.candle {width:6px;height:20px;border-radius:2px;background:linear-gradient(180deg,#fff,#ffdfdf);position:absolute;bottom:16px;box-shadow:0 2px 6px rgba(0,0,0,0.35);}
 .candle:nth-child(1){left:42%;} .candle:nth-child(2){left:50%;} .candle:nth-child(3){left:58%;}
-.flame {position:absolute;top:-12px;left:50%;transform:translateX(-50%);width:12px;height:18px;border-radius:50%;background: radial-gradient(circle at 35% 30%, #fff3a7, #ffaf33 40%, #ff5b5b 70%);filter: drop-shadow(0 4px 8px rgba(255,120,90,0.25)); animation:flicker 0.35s linear infinite;}
+.flame {position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:8px;height:12px;border-radius:50%;background: radial-gradient(circle at 35% 30%, #fff3a7, #ffaf33 40%, #ff5b5b 70%);filter: drop-shadow(0 4px 8px rgba(255,120,90,0.25)); animation:flicker 0.35s linear infinite;}
 @keyframes flicker {0%{transform:translateX(-50%) scaleY(1)}50%{transform:translateX(-50%) scaleY(1.15) translateY(-1px)}100%{transform:translateX(-50%) scaleY(1)}}
-.balloon {position:absolute; bottom:-10%; width:110px; height:140px; border-radius:60% 60% 50% 50%; transform-origin:center bottom; animation: floatUp linear infinite; opacity:0.95; display:flex; align-items:flex-end; justify-content:center;}
+.balloon {position:absolute; bottom:-10%; width:80px; height:100px; border-radius:60% 60% 50% 50%; transform-origin:center bottom; animation: floatUp linear infinite; opacity:0.95;}
 .balloon::after {content:''; width:2px;height:40px; background:rgba(255,255,255,0.12); transform:translateY(12px) rotate(10deg); border-radius:2px; display:block;}
-@keyframes floatUp{0%{transform: translateY(0) rotate(-5deg)}50%{transform: translateY(-30vh) rotate(5deg)}100%{transform: translateY(-62vh) rotate(-5deg)}}
+@keyframes floatUp{0%{transform: translateY(0) rotate(-5deg)}50%{transform: translateY(-25vh) rotate(5deg)}100%{transform: translateY(-55vh) rotate(-5deg)}}
 canvas#confettiCanvas {position:absolute; inset:0; pointer-events:none;}
 </style>
 </head>
 <body>
 <canvas id="confettiCanvas"></canvas>
 <div class="card">
-  <div class="title"><span class="spark">🎉</span> Happy Birthday</div>
+  <div class="title">🎉 Happy Birthday</div>
   <div class="name">Kritika</div>
   <div class="message">
     Hey Kritika! Wishing you the happiest birthday! May your day sparkle as brightly as you do. 💖
@@ -87,10 +59,10 @@ canvas#confettiCanvas {position:absolute; inset:0; pointer-events:none;}
   </div>
 
   <!-- Balloons -->
-  <div class="balloon" style="left:6%;animation-duration:14s;background: radial-gradient(circle at 30% 20%, #fff2f6, #ff6b81);"></div>
-  <div class="balloon" style="left:22%;animation-duration:12s;width:90px;height:120px;background: radial-gradient(circle at 30% 20%, #fff,#ffa8d0);"></div>
-  <div class="balloon" style="left:38%;animation-duration:16s;width:120px;height:150px;background: radial-gradient(circle at 35% 20%, #fff,#6ee7b7);"></div>
-  <div class="balloon" style="left:72%;animation-duration:11s;width:100px;height:130px;background: radial-gradient(circle at 30% 20%, #fff,#7dd3fc);"></div>
+  <div class="balloon" style="left:10%;background: radial-gradient(circle at 30% 20%, #fff2f6, #ff6b81);animation-duration:14s;"></div>
+  <div class="balloon" style="left:30%;background: radial-gradient(circle at 30% 20%, #fff,#ffa8d0);animation-duration:12s;"></div>
+  <div class="balloon" style="left:50%;background: radial-gradient(circle at 35% 20%, #fff,#6ee7b7);animation-duration:16s;"></div>
+  <div class="balloon" style="left:70%;background: radial-gradient(circle at 30% 20%, #fff,#7dd3fc);animation-duration:11s;"></div>
 </div>
 
 <script>
@@ -107,7 +79,7 @@ Confetto.prototype.draw=function(ctx){ctx.save();ctx.translate(this.x,this.y);ct
 function spawnBurst(x,y,count){for(let i=0;i<count;i++){confetti.push(new Confetto(x+random(-30,30),y+random(-10,10)));}} 
 function updateAll(){ctx.clearRect(0,0,W,H);for(let i=confetti.length-1;i>=0;i--){const c=confetti[i];c.update();c.draw(ctx);if(c.y>H+60||c.life>c.maxLife) confetti.splice(i,1);} requestAnimationFrame(updateAll);} 
 updateAll(); 
-// Auto-spawn confetti every second for effect
+// auto confetti
 setInterval(()=>{spawnBurst(random(0,W), random(0,H/2), 10);}, 1000); 
 window.addEventListener('resize',()=>{W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight;});
 </script>
